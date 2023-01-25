@@ -3,14 +3,13 @@ import { changeButtonColor, changeColor } from "./actions/buttonActions";
 import ColorComponent from "./ColorComponent";
 function App() {
   const dispatch = useDispatch();
-  const color = useSelector(state => state.buttonReducer.buttonColor) || 'white'
-  const color2 = useSelector(state => state.buttonReducer.button2Color) || 'white'
+  const color = useSelector(state => state.buttonReducer?.buttonColor) || 'white'
+  const color2 = useSelector(state => state.buttonReducer?.button2Color) || 'white'
 
   const onButtonClick = (color, id) => {
     dispatch(changeColor(color))
     dispatch(changeButtonColor(color, id))
   }
-  console.log('App');
 
   return (
     <div>
